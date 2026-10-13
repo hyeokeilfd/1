@@ -1,0 +1,50 @@
+[build]
+  publish = "static"
+  functions = "netlify/functions"
+
+# Static assets backward compatibility
+[[redirects]]
+  from = "/static/*"
+  to = "/:splat"
+  status = 200
+
+# API Endpoints Routing to Netlify Function
+[[redirects]]
+  from = "/api/gainers"
+  to = "/.netlify/functions/api?route=gainers"
+  status = 200
+
+[[redirects]]
+  from = "/api/most-active"
+  to = "/.netlify/functions/api?route=most-active"
+  status = 200
+
+[[redirects]]
+  from = "/api/market"
+  to = "/.netlify/functions/api?route=market"
+  status = 200
+
+[[redirects]]
+  from = "/api/chart/:symbol"
+  to = "/.netlify/functions/api?route=chart&symbol=:symbol"
+  status = 200
+
+[[redirects]]
+  from = "/api/detail/:symbol"
+  to = "/.netlify/functions/api?route=detail&symbol=:symbol"
+  status = 200
+
+[[redirects]]
+  from = "/api/alerts"
+  to = "/.netlify/functions/api?route=alerts"
+  status = 200
+
+[[redirects]]
+  from = "/api/alerts/clear"
+  to = "/.netlify/functions/api?route=clear-alerts"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200

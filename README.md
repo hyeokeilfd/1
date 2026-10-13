@@ -40,7 +40,33 @@
 
 ---
 
-## 🚀 실행 방법 (원클릭)
+## 🌐 넷틀리파이(Netlify) 배포 방법
+
+이 프로젝트는 넷틀리파이의 **정적 사이트 호스팅(Static Hosting)** 및 **서버리스 함수(Netlify Functions)** 아키텍처에 맞추어 완벽하게 구성되어 있습니다 (`netlify.toml` 및 `netlify/functions/api.js` 포함).
+
+### 📌 방법 1: 깃허브(GitHub) 연동 배포 (가장 추천)
+1. 깃허브(GitHub)에 새 리포지토리(Repository)를 생성합니다.
+2. 현재 로컬 폴더에서 Git 커밋 후 푸시합니다:
+   ```bash
+   git init
+   git add .
+   git commit -m "feat: US Surge Radar MVP for Netlify"
+   git branch -M main
+   git remote add origin https://github.com/<사용자ID>/<리포지토리명>.git
+   git push -u origin main
+   ```
+3. [Netlify 대시보드](https://app.netlify.com/)에 접속하여 로그인합니다.
+4. **`Add new site`** > **`Import an existing project`** 클릭 후 GitHub를 선택합니다.
+5. 방금 푸시한 저장소를 선택하면, `netlify.toml` 설정이 자동으로 감지됩니다:
+   - **Publish directory**: `static`
+   - **Functions directory**: `netlify/functions`
+   - *(별도의 Build Command 입력 불필요)*
+6. **`Deploy site`** 버튼을 누르면 10초 이내에 글로벌 라이브 URL이 생성되어 즉시 접속 가능합니다!
+
+---
+
+## 🚀 로컬 환경 실행 방법 (원클릭)
+
 
 ### 방법 1: `run.bat` 더블 클릭 (추천)
 폴더 내의 **`run.bat`** 파일을 더블 클릭하면 자동으로 서버가 실행되고 브라우저(`http://127.0.0.1:8000`)가 열립니다.
